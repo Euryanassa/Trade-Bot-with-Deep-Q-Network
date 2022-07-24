@@ -79,7 +79,7 @@ def trader(stocks = ['AAPL','MSI','SBUX','GME','GOOGL'],
 
 def parse_opt():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--stocks', default = ['AAPL','MSI','SBUX'], help = 'Stocks shortcut (You can find from google), default is ["AAPL","MSI","SBUX"]')
+    parser.add_argument('--stocks', nargs='+', default = ['AAPL','MSI','SBUX'], help = 'Stocks shortcut (You can find from google), default is ["AAPL","MSI","SBUX"]')
     parser.add_argument('--start_date', default = '2021-01-01', help = 'Write date in YYYY-DD-MM format, default is 2021-01-01')
     parser.add_argument('--end_date', default = datetime.strftime(datetime.now() - timedelta(1), '%Y-%m-%d'), help = 'Write date in YYYY-DD-MM format, default is yesterday')
     parser.add_argument('--initial_investment', default = 20000, help = 'Money amout for your environment, default is 20000(20kUSD)')
