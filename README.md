@@ -10,6 +10,19 @@ Q-learning is a model-free reinforcement learning algorithm to learn the value o
 ![image](https://user-images.githubusercontent.com/67932543/180648947-bf93039e-ceb6-439e-ade6-8c55cce86709.png)
 
 # Quick Start
+### Alternative 1
+```bash
+# For quick action (Conda Environment)
+conda create -n tradebot -y && conda activate tradebot && pip install -r requirements.txt && bash Test/test.sh
+
+# For quick action (Pip Environment)
+python -m venv tradebot && source tradebot/bin/activate && pip install -r requirements.txt && bash Test/test.sh
+
+## Just give me the linesssss without virtual enviroment
+pip install -r requirements.txt && bash Test/test.sh
+```
+Note: I'm working on better bash code but for now, just tester bash untill next update
+### Alternative 2
 ```bash
 # Check before installing. It contains Tensorflow MacOS in requirements.txt
 # Python 3.9 or higher suggested
