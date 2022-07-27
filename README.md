@@ -11,6 +11,11 @@ Q-learning is a model-free reinforcement learning algorithm to learn the value o
 
 # Quick Start
 ```bash
+# Check before installing. It contains Tensorflow MacOS in requirements.txt
+# Python 3.9 or higher suggested
+pip install -r requirements.txt
+```
+```bash
 python trader_file.py --stocks AAPL MSI SBUX \
                       --start_date '2021-01-01' \
                       --end_date '2022-07-23'
