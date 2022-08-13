@@ -8,6 +8,28 @@
 Q-learning is a model-free reinforcement learning algorithm to learn the value of an action in a particular state. It does not require a model of the environment, and it can handle problems with stochastic transitions and rewards without requiring adaptations. But in this project, deep learning added to learning process. So that, it becomes Deep Q-learning with model. A core difference between Deep Q-Learning and Q-Learning is the implementation of the Q-table. Critically, Deep Q-Learning replaces the regular Q-table with a neural network. Rather than mapping a state-action pair to a q-value, a neural network maps input states to (action, Q- value) pairs.
 
 ![image](https://user-images.githubusercontent.com/67932543/180648947-bf93039e-ceb6-439e-ade6-8c55cce86709.png)
+# 🐳 Try with Docker!
+## Pull Docker Image:
+```bash
+docker pull altemur/tradebot:1.0
+```
+## Run Image
+```bash
+docker run -it altemur/tradebot:1.0 /bin/bash 
+```
+## Execute inside Docker and Experience the Fame of Deep Reinforcement Learning
+```bash
+python trader_file.py --stocks AAPL MSI SBUX \
+                      --start_date '2021-01-01' \
+                      --end_date '2022-07-23' \
+                      --initial_investment 20000 \
+                      --gamma 0.95 \
+                      --epsilon 1.0 \
+                      --epsilon_min 0.01 \
+                      --epsilon_decay 0.995 \
+                      --num_episodes 50 \
+                      --save_model True
+```
 
 # Quick Start
 ### Alternative 1
