@@ -44,7 +44,7 @@ def trader(stocks = ['AAPL','MSI','SBUX','GME','GOOGL'],
 
     portfolio_value = []
 
-    for i in range(num_episodes):
+    for i in range(int(num_episodes)):
         done=False
         state = env.reset()
         state = scaler.transform([state])
@@ -52,7 +52,8 @@ def trader(stocks = ['AAPL','MSI','SBUX','GME','GOOGL'],
             action = MultiStockEnv.greedy_policy(state, model, epsilon, action_size)
             next_state, reward, done, info = env.step(action)
             next_state = scaler.transform([next_state])
-
+            reward = float(reward)
+            gamma = float(gamma)
             if done:
                 target = reward
             else:
@@ -65,11 +66,14 @@ def trader(stocks = ['AAPL','MSI','SBUX','GME','GOOGL'],
             
             state = next_state
             
+            epsilon_decay = float(epsilon_decay)
+            epsilon = float(epsilon)
+            epsilon_min = float(epsilon_min)
             if epsilon > epsilon_min:
                 epsilon *= epsilon_decay
             
         val=info['cur_val']
-        print(f"episode: {i + 1}/{num_episodes}, episode end value: {val:.2f}, total profit: {-(100 - 100*(val/initial_investment)):.2f}%")
+        print(f"episode: {int(i) + 1}/{int(num_episodes)}, episode end value: {float(val):.2f}, total profit: {-(100 - 100*(float(val)/float(initial_investment))):.2f}%")
         portfolio_value.append(val)
 
     if save_model:
