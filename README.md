@@ -9,6 +9,7 @@ Q-learning is a model-free reinforcement learning algorithm to learn the value o
 
 ![image](https://user-images.githubusercontent.com/67932543/180648947-bf93039e-ceb6-439e-ade6-8c55cce86709.png)
 # 🐳 Try with Docker!
+https://hub.docker.com/repository/docker/altemur/tradebot
 ## Pull Docker Image:
 ```bash
 docker pull altemur/tradebot:1.0
