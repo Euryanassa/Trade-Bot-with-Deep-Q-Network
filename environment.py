@@ -100,6 +100,9 @@ class MultiStockEnv:
         return obs
     
     def _get_val(self):
+        #print(type(self.stock_owned.dot(self.stock_price)))
+        self.cash_in_hand = float(self.cash_in_hand) #.astype('float64')
+        #print(type(self.cash_in_hand))
         return self.stock_owned.dot(self.stock_price) + self.cash_in_hand
 
     def _trade(self, action):
@@ -151,8 +154,8 @@ class MultiStockEnv:
         return model
 
     def greedy_policy(state, model, epsilon, action_size):
-        if np.random.rand() <= epsilon:
-            return np.random.choice(action_size)
+        if np.random.rand() <= float(epsilon):
+            return np.random.choice(int(action_size))
         else:
             act_values = model.predict(state)
             return np.argmax(act_values[0])  # returns action
