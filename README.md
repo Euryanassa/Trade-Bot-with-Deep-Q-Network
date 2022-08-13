@@ -31,7 +31,7 @@ pip install -r requirements.txt
 ```bash
 python trader_file.py --stocks AAPL MSI SBUX \
                       --start_date '2021-01-01' \
-                      --end_date '2022-07-23'
+                      --end_date '2022-07-23' \
                       --initial_investment 20000 \
                       --gamma 0.95 \
                       --epsilon 1.0 \
